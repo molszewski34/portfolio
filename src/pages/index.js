@@ -1,129 +1,169 @@
 import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
-
+import { Link, graphql } from "gatsby"
+import "../styles/global.css"
+import logo from "../images/gatsby-icon.png"
 import Layout from "../components/layout"
-import Seo from "../components/seo"
-import * as styles from "../components/index.module.css"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faCode } from "@fortawesome/free-solid-svg-icons"
+// import ContactForm from "../components/ContactForm"
+import GatsbyImageComponent from "../components/GatsbyImageComponent"
 
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-  },
-  {
-    text: "Examples",
-    url: "https://github.com/gatsbyjs/gatsby/tree/master/examples",
-    description:
-      "A collection of websites ranging from very basic to complex/complete that illustrate how to accomplish specific tasks within your Gatsby sites.",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Learn how to add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-  },
-  {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
-    description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
-  },
-]
+import { faGithub } from "@fortawesome/free-brands-svg-icons"
 
-const samplePageLinks = [
-  {
-    text: "Page 2",
-    url: "page-2",
-    badge: false,
-    description:
-      "A simple example of linking to another page within a Gatsby site",
+const IndexPage = ({
+  data: {
+    allSitePage: { edges },
   },
-  { text: "TypeScript", url: "using-typescript" },
-  { text: "Server Side Rendering", url: "using-ssr" },
-  { text: "Deferred Static Generation", url: "using-dsg" },
-]
-
-const moreLinks = [
-  { text: "Join us on Discord", url: "https://gatsby.dev/discord" },
-  {
-    text: "Documentation",
-    url: "https://gatsbyjs.com/docs/",
-  },
-  {
-    text: "Starters",
-    url: "https://gatsbyjs.com/starters/",
-  },
-  {
-    text: "Showcase",
-    url: "https://gatsbyjs.com/showcase/",
-  },
-  {
-    text: "Contributing",
-    url: "https://www.gatsbyjs.com/contributing/",
-  },
-  { text: "Issues", url: "https://github.com/gatsbyjs/gatsby/issues" },
-]
-
-const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
-
-const IndexPage = () => (
+}) => (
   <Layout>
-    <Seo title="Home" />
-    <div className={styles.textCenter}>
-      <StaticImage
-        src="../images/example.png"
-        loading="eager"
-        width={64}
-        quality={95}
-        formats={["auto", "webp", "avif"]}
-        alt=""
-        style={{ marginBottom: `var(--space-3)` }}
-      />
-      <h1>
-        Welcome to <b>Gatsby!</b>
-      </h1>
-      <p className={styles.intro}>
-        <b>Example pages:</b>{" "}
-        {samplePageLinks.map((link, i) => (
-          <React.Fragment key={link.url}>
-            <Link to={link.url}>{link.text}</Link>
-            {i !== samplePageLinks.length - 1 && <> · </>}
-          </React.Fragment>
-        ))}
-        <br />
-        Edit <code>src/pages/index.js</code> to update this page.
-      </p>
-    </div>
-    <ul className={styles.list}>
-      {links.map(link => (
-        <li key={link.url} className={styles.listItem}>
-          <a
-            className={styles.listItemLink}
-            href={`${link.url}${utmParameters}`}
-          >
-            {link.text} ↗
+    <section className="mb-3 mt-10 flex flex-col justify-center items-center gap-10 px-10  sm:flex-row">
+      <div className="bg-violet-900 w-52 h-52 rounded-full flex justify-center items-center">
+        <FontAwesomeIcon className="text-white text-9xl" icon={faCode} />
+        {/* <img src={logo} alt="logo" className="w-40 sm:w-80" /> */}
+      </div>
+      <div className="text-center flex flex-col gap-3 bg-orange-200  p-3 rounded-md sm:w-6/12">
+        <h3 className="font-bold text-2xl  text-gray-700 sm:text-3xl sm:flex sm:flex-wrap ">
+          Hi, I'm Mariusz and this my Portfolio site made with GatsbyJS and
+          GraphCMs
+        </h3>
+        <p className="text-base text-gray-500">
+          I am a Frontend developer with knowleadge about <b>Javascript</b>,{" "}
+          <b>React</b> , <b>GatsbyJS</b>, <b>Graphql </b>and{" "}
+          <b>headless CMS's</b>. I also use CSS frameworks as <b>Tailwind</b>{" "}
+          and <b>Bulma.</b>
+        </p>
+        <span className="text-gray-600 underline">
+          <a href="">
+            If your are intrested in how this page was made and my work with
+            Rich Text you can click <b className="text-blue-600">here</b>{" "}
           </a>
-          <p className={styles.listItemDescription}>{link.description}</p>
-        </li>
-      ))}
-    </ul>
-    {moreLinks.map((link, i) => (
-      <React.Fragment key={link.url}>
-        <a href={`${link.url}${utmParameters}`}>{link.text}</a>
-        {i !== moreLinks.length - 1 && <> · </>}
-      </React.Fragment>
-    ))}
+          .
+        </span>
+        <button></button>
+      </div>
+      {/* <button className="bg-red-500 text-white px-6 py-3 font-semibold rounded-md">Contact</button> */}
+    </section>
+
+    <section className="mb-3 mt-10 flex flex-col justify-center items-center px-10 w-full  ">
+      <header className="mb-10 flex items-center justify-center">
+        <h2 className="font-bold text-3xl sm:text-5xl">My Projects</h2>
+      </header>
+      {edges.map((page, index) => {
+        const context = page.node.context.data
+        return (
+          <article
+            key={index}
+            className="p-3 rounded mb-3 bg-black bg-opacity-80 flex flex-col justify-center items-center sm:max-w-2xl"
+          >
+            {/* <div className="relative"> */}
+            <Link to={context.thumbnailAsset.url}>
+              <div className="image">
+                {/* <div className="article-img-overlay">
+                <span className="article-img-overlay_text">
+                  Click to Full view
+                </span>
+              </div> */}
+
+                <img
+                  src={context.thumbnailAsset.url}
+                  alt=""
+                  // className="article-img-hover"
+                  className="image__img"
+                />
+
+                {/* <GatsbyImageComponent key={index} /> */}
+
+                <div className="image__overlay">
+                  <div className="image__title">
+                    <h4 className="image__text"> Click to Full view</h4>
+                  </div>
+                </div>
+              </div>
+            </Link>
+            <div className="mt-3 flex flex-col  my-3 sm:p-3">
+              <Link
+                className="text-2xl font-bold text-center text-gray-300 mb-3 hover:text-opacity-80"
+                to={page.node.path}
+                key={page.node.path}
+              >
+                {page.node.context.data.title}
+              </Link>
+
+              <p className="text-white">{context.description}</p>
+              {/* <hr className="border-red-500" /> */}
+              <p className="mt-3 text-left font-bold text-white">Features:</p>
+              <p className="text-gray-300">{context.features}</p>
+              <p className="text-left font-bold text-white">Tools used:</p>
+              <p className="text-gray-300">{context.technologies}</p>
+            </div>
+            <div className="flex flex-col w-full sm:flex-row sm:justify-between sm:px-6">
+              <Link className="  mt-3" to={page.node.path} key={page.node.path}>
+                <button className="bg-red-500 text-white p-3 font-semibold rounded-md hover:bg-opacity-80 ">
+                  Show Post
+                </button>
+              </Link>
+
+              <Link
+                className=" mt-3  "
+                to={page.node.context.data.githubLink}
+                key={page.node.context.data.githubLink}
+              >
+                <button className="bg-gray-500 text-white p-3 font-semibold flex items-center gap-1 rounded-md hover:bg-opacity-80">
+                  Code
+                  <FontAwesomeIcon
+                    className=" text-white text-2xl"
+                    icon={faGithub}
+                  />
+                </button>
+              </Link>
+            </div>
+          </article>
+        )
+      })}
+    </section>
   </Layout>
 )
 
-/**
- * Head export to define metadata for the page
- *
- * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
- */
-export const Head = () => <Seo title="Home" />
+export const projectPages = graphql`
+  query {
+    allSitePage(
+      filter: {
+        component: {
+          eq: "G:/Frontend Portfolio/portfolio/src/templates/projectPost.js"
+        }
+      }
+    ) {
+      edges {
+        node {
+          path
+          component
+          context {
+            data {
+              features
+      
+              description
+              image {
+                id
+                url
+              }
+              link
+              slug
+              technologies
+              text {
+                text
+              }
+              githubLink
+              thumbnailAsset {
+                id
+                url
+              }
+              title
+            }
+          }
+        }
+      }
+    }
+  }
+`
 
 export default IndexPage
