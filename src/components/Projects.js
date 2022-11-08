@@ -20,7 +20,7 @@ const Projects = () => (
             slug
             link
             features
-            technologies
+            stack
             image {
               url
             }
@@ -41,7 +41,7 @@ const Projects = () => (
               <p>{project.title}</p>
               <p>{project.description}</p>
               <p>{project.features}</p>
-              <p>{project.technologies}</p>
+              <p>{project.stack}</p>
               <p>{project.link}</p>
               <div>
                 {console.log(project)}

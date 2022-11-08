@@ -32,14 +32,14 @@ fragment Asset on Asset {
       stage
     }
   }
-  screenshotProject {
+  thumbnailAssetProject {
     ... on Project {
       remoteTypeName: __typename
       remoteId: id
       stage
     }
   }
-  thumbnailAssetProject {
+  imageProject {
     ... on Project {
       remoteTypeName: __typename
       remoteId: id

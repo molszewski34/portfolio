@@ -6,7 +6,8 @@ fragment Project on Project {
   remoteId: id
   title
   description
-  technologies
+  date
+  stack
   features
   text {
     ... on RichText {
@@ -17,6 +18,7 @@ fragment Project on Project {
     }
   }
   link
+  githubLink
   code {
     ... on RichText {
       raw
@@ -26,6 +28,7 @@ fragment Project on Project {
     }
   }
   slug
+  markdown
   publishedBy {
     ... on User {
       remoteTypeName: __typename

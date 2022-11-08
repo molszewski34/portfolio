@@ -1,13 +1,9 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
-import "../styles/global.css"
-import logo from "../images/gatsby-icon.png"
 import Layout from "../components/layout"
+import "../styles/global.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCode } from "@fortawesome/free-solid-svg-icons"
-// import ContactForm from "../components/ContactForm"
-import GatsbyImageComponent from "../components/GatsbyImageComponent"
-
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 
 const IndexPage = ({
@@ -19,7 +15,6 @@ const IndexPage = ({
     <section className="mb-3 mt-10 flex flex-col justify-center items-center gap-10 px-10  sm:flex-row">
       <div className="bg-violet-900 w-52 h-52 rounded-full flex justify-center items-center">
         <FontAwesomeIcon className="text-white text-9xl" icon={faCode} />
-        {/* <img src={logo} alt="logo" className="w-40 sm:w-80" /> */}
       </div>
       <div className="text-center flex flex-col gap-3 bg-orange-200  p-3 rounded-md sm:w-6/12">
         <h3 className="font-bold text-2xl  text-gray-700 sm:text-3xl sm:flex sm:flex-wrap ">
@@ -27,21 +22,19 @@ const IndexPage = ({
           GraphCMs
         </h3>
         <p className="text-base text-gray-500">
-          I am a Frontend developer with knowleadge about <b>Javascript</b>,{" "}
+          I am a Frontend developer with knowleadge about <b>Javascript</b>,
           <b>React</b> , <b>GatsbyJS</b>, <b>Graphql </b>and{" "}
-          <b>headless CMS's</b>. I also use CSS frameworks as <b>Tailwind</b>{" "}
+          <b>headless CMS's</b>. I also use CSS frameworks as <b>Tailwind</b>
           and <b>Bulma.</b>
         </p>
         <span className="text-gray-600 underline">
-          <a href="">
+          <Link to="/portfolio">
             If your are intrested in how this page was made and my work with
-            Rich Text you can click <b className="text-blue-600">here</b>{" "}
-          </a>
-          .
+            Rich Text you can click <b className="text-blue-600">here.</b>
+          </Link>
         </span>
         <button></button>
       </div>
-      {/* <button className="bg-red-500 text-white px-6 py-3 font-semibold rounded-md">Contact</button> */}
     </section>
 
     <section className="mb-3 mt-10 flex flex-col justify-center items-center px-10 w-full  ">
@@ -55,23 +48,13 @@ const IndexPage = ({
             key={index}
             className="p-3 rounded mb-3 bg-black bg-opacity-80 flex flex-col justify-center items-center sm:max-w-2xl"
           >
-            {/* <div className="relative"> */}
             <Link to={context.thumbnailAsset.url}>
               <div className="image">
-                {/* <div className="article-img-overlay">
-                <span className="article-img-overlay_text">
-                  Click to Full view
-                </span>
-              </div> */}
-
                 <img
                   src={context.thumbnailAsset.url}
                   alt=""
-                  // className="article-img-hover"
                   className="image__img"
                 />
-
-                {/* <GatsbyImageComponent key={index} /> */}
 
                 <div className="image__overlay">
                   <div className="image__title">
@@ -93,8 +76,8 @@ const IndexPage = ({
               {/* <hr className="border-red-500" /> */}
               <p className="mt-3 text-left font-bold text-white">Features:</p>
               <p className="text-gray-300">{context.features}</p>
-              <p className="text-left font-bold text-white">Tools used:</p>
-              <p className="text-gray-300">{context.technologies}</p>
+              <p className="text-left font-bold text-white">Stack:</p>
+              <p className="text-gray-300">{context.stack}</p>
             </div>
             <div className="flex flex-col w-full sm:flex-row sm:justify-between sm:px-6">
               <Link className="  mt-3" to={page.node.path} key={page.node.path}>
@@ -140,15 +123,12 @@ export const projectPages = graphql`
           context {
             data {
               features
-      
+
               description
-              image {
-                id
-                url
-              }
+   
               link
               slug
-              technologies
+              stack
               text {
                 text
               }
