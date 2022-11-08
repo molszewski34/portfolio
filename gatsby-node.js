@@ -78,7 +78,7 @@ exports.createPages = async ({ graphql, actions }) => {
           edges {
             node {
               features
-     
+
               description
               image {
                 id
