@@ -28,7 +28,7 @@ function Footer() {
           Message me with contact form or social media
         </p>
         <p className="text-gray-300  text-base flex justify-center align-middle">
-        <FontAwesomeIcon className=" text-white text-2xl mr-2" icon={faEnvelope} />  
+        <FontAwesomeIcon className="footer-icon__email text-white text-2xl mr-2" icon={faEnvelope} />  
      m.olszewski341.gmail.com</p>
         {/* <button className="bg-red-500 text-white  px-3 py-2 font-semibold rounded-md hover:bg-opacity-80">
           Contact

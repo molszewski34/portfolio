@@ -44,7 +44,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const projectsQuery = await graphql(`
   {
     portfolio {
-      projectsConnection {
+      projectsConnection(orderBy: date_DESC){
         edges {
           node {
             features

@@ -4,6 +4,7 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
+    pathPrefix: "/portfolio",
     title: `Mariusz Olszewski Portfolio`,
     description: `This is Mariusz Olszewski Portfolio site`,
     author: `@MariuszOlszewski`,
