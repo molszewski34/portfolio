@@ -29,6 +29,10 @@ hr {
     margin: 20px 0;
 }
 
+svg{
+    width: 1em;;
+}
+
 .article-img-overlay{
     position: absolute;
     z-index: 10;
