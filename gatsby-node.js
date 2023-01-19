@@ -10,6 +10,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       data: dataContext
     }
     type dataContext {
+      date: String,
       features: String,
       description: String
       image: imageContext,
@@ -20,6 +21,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       text: textContext,    
       thumbnailAsset:  thumbnailAssetContext,
       githubLink: String,
+      
     }
     type imageContext {
       url: String
@@ -48,7 +50,7 @@ exports.createPages = async ({ graphql, actions }) => {
         edges {
           node {
             features
-
+            date
             description
 
             link

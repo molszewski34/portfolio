@@ -3,6 +3,7 @@ require("dotenv").config({
 })
 
 module.exports = {
+  pathPrefix: "/portfolio",
   siteMetadata: {
     title: `Mariusz Olszewski Portfolio`,
     description: `This is Mariusz Olszewski Portfolio site`,

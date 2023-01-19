@@ -48,7 +48,7 @@ const IndexPage = ({
             key={index}
             className="p-3 rounded mb-3 bg-black bg-opacity-80 flex flex-col justify-center items-center sm:max-w-2xl"
           >
-            <Link to={context.thumbnailAsset.url}>
+            <a href={context.thumbnailAsset.url} target="_blank" rel="noopener">
               <div className="image">
                 <img
                   src={context.thumbnailAsset.url}
@@ -56,16 +56,16 @@ const IndexPage = ({
                   className="image__img"
                 />
 
-                <div className="image__overlay">
+                <div className="image__overlay" >
                   <div className="image__title">
                     <h4 className="image__text"> Click to Full view</h4>
                   </div>
                 </div>
               </div>
-            </Link>
+              </a>
             <div className="mt-3 flex flex-col  my-3 sm:p-3">
               <Link
-                className="text-2xl font-bold text-center text-gray-300 mb-3 hover:text-opacity-80"
+                className="text-3xl font-bold text-center text-[#C94040] mb-3 hover:text-opacity-80"
                 to={page.node.path}
                 key={page.node.path}
               >
@@ -110,11 +110,8 @@ const IndexPage = ({
 export const projectPages = graphql`
   query {
     allSitePage(
-      filter: {
-        component: {
-          eq: "G:/Frontend Portfolio/portfolio/src/templates/projectPost.js"
-        }
-      }
+      filter: {component: {eq: "G:/Frontend Portfolio/portfolio/src/templates/projectPost.js"}}
+      sort: {fields: context___data___date, order: DESC}
     ) {
       edges {
         node {
@@ -123,9 +120,7 @@ export const projectPages = graphql`
           context {
             data {
               features
-
               description
-   
               link
               slug
               stack
@@ -138,6 +133,7 @@ export const projectPages = graphql`
                 url
               }
               title
+              date
             }
           }
         }

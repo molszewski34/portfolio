@@ -2,8 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-/* @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap'); */
-/* @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap'); */
+
 
 *,::after,::before{
     box-sizing: border-box;
@@ -13,10 +12,8 @@
 
 html{
     font-family: 'Poppins', sans-serif;
-    /* font-family: 'Oswald', sans-serif; */
-    /* font-family: 'Montserrat', sans-serif; */
+ 
 }
-
 
 body{
     background-color: #FFF7F0;
@@ -29,8 +26,6 @@ hr {
     margin: 20px 0;
 }
 
-
-
 .article-img-overlay{
     position: absolute;
     z-index: 10;
@@ -42,9 +37,7 @@ hr {
     opacity: .4;
 }
 
-/* .article-img-overlay_text{
 
-} */
 
 
 .article-img-hover{
@@ -108,10 +101,7 @@ border-radius: 3px;
 
 
 @media (min-width: 640px){
-    /* .img__max-width{
-        max-width: 90vw;
-        max-height: 30vh;
-    } */
+
     
     .text__max-width{
         max-width: 90vw;
@@ -139,8 +129,7 @@ border-radius: 3px;
     overflow: auto;
     display: flex;
     flex-direction: column;
-    /* align-items: center;
-    justify-content: center; */
+
 
 }
 
@@ -150,34 +139,47 @@ border-radius: 3px;
         max-width: 60vw;
         background-color: #fff;
         padding: 0 2em;
+        display: flex;
+        flex-direction: column;
+        gap:1em;
+        padding-top: 2em;
     }
 
 }
 
-
-
 .markdown p{
     margin: .3em 0;
-
- 
 }
 
 .markdown strong{
-    /* color: lightgray; */
     font-weight: bold;
     font-size: .8em;
     margin: 0;
 }
 
-.markdown h2{
-    font-size: 2em;
+.markdown h1, h2, h3, h4, h5{
     font-weight: bold;
     line-height: 1em;
 }
-.markdown h4{
+
+.markdown h1 {
+    font-size: 2em;
+    text-align:  center;
+}
+
+.markdown h2{
+    font-size: 2em;
+
+}
+
+.markdown h3{
     font-size: 1.5em;
-    font-weight: bold;
-    line-height: 1em;
+}
+
+
+.markdown h4{
+    font-size: 1em;
+
 }
 
 .markdown pre{
@@ -188,8 +190,7 @@ border-radius: 3px;
 }
 
 .markdown code{
-
-    color: rgba(0, 0, 0);
+       color: rgba(0, 0, 0);
     font-size: 1em;
     line-height: .5em;
 }
@@ -197,7 +198,7 @@ border-radius: 3px;
 .markdown blockquote{
     border-left: 3px blue solid;
     padding-left: 10px;
-    /* font-weight: bold; */
+
   
     color: rgb(85, 81, 81);
     font-size: 1.2em;
@@ -209,10 +210,12 @@ border-radius: 3px;
     max-width: 30em;
 }
 
+.markdown .links{
+    color: #38BDF8;
+}
+
 .img__testing{
-/* display: grid;
-grid-template-columns: 1fr;
-grid-gap: 1em; */
+
 background-color: #fff;
 display: flex;
 flex-direction: column;
@@ -227,11 +230,8 @@ box-shadow: 8px 8px 24px -11px rgba(66, 68, 90, 1);
 .img__testing img{
     object-fit: cover;
     border-radius: 3px;
-
-
 }
 
 .image__testing strong p{
     margin: 0;
-
 }
