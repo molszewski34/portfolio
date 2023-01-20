@@ -41,6 +41,7 @@ const IndexPage = ({
       <header className="mb-10 flex items-center justify-center">
         <h2 className="font-bold text-3xl sm:text-5xl">My Projects</h2>
       </header>
+      <div className="">
       {edges.map((page, index) => {
         const context = page.node.context.data
         return (
@@ -103,6 +104,7 @@ const IndexPage = ({
           </article>
         )
       })}
+      </div>
     </section>
   </Layout>
 )
