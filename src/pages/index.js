@@ -49,7 +49,7 @@ const IndexPage = ({
             key={index}
             className="p-3 rounded mb-3 bg-black bg-opacity-80 flex flex-col justify-center items-center sm:max-w-2xl"
           >
-            <a href={context.thumbnailAsset.url} target="_blank" rel="noopener">
+            <a href={context.thumbnailAsset.url} target="_blank" rel="noreferrer" >
               <div className="image">
                 <img
                   src={context.thumbnailAsset.url}
