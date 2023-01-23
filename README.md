@@ -16,8 +16,6 @@ This portfolio was made with use of Gatsbyjs and React.
 Tailwind was used for practice reasons, although some custom css styles are also used. In gatsby-node.js file i used some custom schema injection for diffrent aproach to generating path to subsites made programaticaly. Today i would make it diffrent, but that was my way those days.
 
 **Dependencies**
-
-"dependencies": {
 "@formspree/react": "^2.4.0",
 "@fortawesome/fontawesome-svg-core": "^6.2.0",
 "@fortawesome/free-brands-svg-icons": "^6.2.0",
@@ -37,6 +35,5 @@ Tailwind was used for practice reasons, although some custom css styles are also
 "prop-types": "^15.8.1",
 "react": "^18.1.0",
 "react-dom": "^18.1.0"
-},
 
 <!-- AUTO-GENERATED-CONTENT:END -->
