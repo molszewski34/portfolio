@@ -23,7 +23,7 @@ const IndexPage = ({
         </h3>
         <p className="text-base text-gray-500">
           I am a Frontend developer with knowleadge about <b>Javascript</b>,
-          <b>React</b> , <b>GatsbyJS</b>, <b>Graphql </b>and{" "}
+          <b>React</b> , <b>GatsbyJS</b>, <b>Graphql </b>and
           <b>headless CMS's</b>. I also use CSS frameworks as <b>Tailwind</b>
           and <b>Bulma.</b>
         </p>
