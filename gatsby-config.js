@@ -8,7 +8,7 @@ module.exports = {
     title: `Mariusz Olszewski Portfolio`,
     description: `This is Mariusz Olszewski Portfolio site`,
     author: `@MariuszOlszewski`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    siteUrl: `https://molszewski34.github.io/portfolio/`,
   },
   plugins: [
     "gatsby-transformer-remark",

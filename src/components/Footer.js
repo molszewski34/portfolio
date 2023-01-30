@@ -26,9 +26,9 @@ function Footer() {
             <FontAwesomeIcon className=" text-white text-4xl" icon={faGithub} />
           </Link>
         </div>
-        <h3 className="text-white font-bold text-xl sm:text-2xl ">
+        <h1 className="text-white font-bold text-xl sm:text-2xl ">
           Want to chat with me?
-        </h3>
+        </h1>
         <p className="text-white text-sm">
           Message me with contact form or social media
         </p>

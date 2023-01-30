@@ -27,7 +27,7 @@ function ContactForm() {
       htmlFor="email">
         Email Address
       </label> */}
-      <input className=''
+      <input className='text-white'
         id="email"
         type="email" 
         name="email"
@@ -41,7 +41,7 @@ function ContactForm() {
       <textarea
         id="message"
         name="message"
-        className='text-area-height'
+        className='text-area-height text-white'
         placeholder='Contact me...'
       />
       <ValidationError 

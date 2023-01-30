@@ -20,7 +20,7 @@ const pageQuery = graphql`
     thumbnails: allGraphCmsAsset {
       nodes {
         url
-        gatsbyImageData( placeholder: TRACED_SVG)
+        gatsbyImageData( placeholder: NONE)
       }
     }
   }

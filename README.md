@@ -9,10 +9,10 @@ Projects from repositories presented with programaticaly made pages.
 React, Gatsbyjs, GraphCms, Tailwind, Headless Cms - Hygraph
 
 ## Dependencies:
- "@formspree/react": "^2.4.0",
- "@fortawesome/fontawesome-svg-core": "^6.2.0",
- "@fortawesome/free-brands-svg-icons": "^6.2.0",
- "@fortawesome/free-regular-svg-icons": "^6.2.0",
+  "@formspree/react": "^2.4.0", 
+  "@fortawesome/fontawesome-svg-core": "^6.2.0",
+  "@fortawesome/free-brands-svg-icons": "^6.2.0",
+  "@fortawesome/free-regular-svg-icons": "^6.2.0",
   "@fortawesome/free-solid-svg-icons": "^6.2.0",
   "@fortawesome/react-fontawesome": "^0.2.0",
   "babel-plugin-macros": "^3.1.0",

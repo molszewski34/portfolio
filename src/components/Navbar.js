@@ -15,10 +15,10 @@ function Navbar() {
         </div>
       </Link>
 
-      <button className="bg-black text-white px-3 font-semibold rounded-md hover:bg-opacity-80">
+
    
-        <a href="#footer">Contact Me</a>
-      </button>
+        <a className="bg-black text-white px-3 font-semibold rounded-md flex items-center hover:bg-opacity-80" href="#footer">Contact Me</a>
+
     </nav>
   )
 }
