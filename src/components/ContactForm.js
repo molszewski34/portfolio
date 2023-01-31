@@ -8,15 +8,7 @@ function ContactForm() {
       return <p>Thanks for joining!</p>;
   }
 
-      {/* <form action="https://formspree.io/f/{form_id}" method="post">
-  <label className="text-white" for="Name">Name</label>
-  <input name="Name" id="name" type="text"/>
-  <label className="text-white" for="email">Email</label>
-  <input name="Email" id="email" type="email"/>
-  <label className="text-white" for="textfield">Email</label>
-  <input name="TextField" id="textField" type="email"/>
-  <button className="text-white" type="submit">Submit</button>
-</form> */}
+
 
 
   return (
@@ -49,7 +41,7 @@ function ContactForm() {
         field="message"
         errors={state.errors}
       />
-      <button type="submit" disabled={state.submitting} className="bg-blue-500 text-white p-3 font-semibold rounded-md   hover:bg-opacity-90">
+      <button role="button" type="submit" disabled={state.submitting} className="bg-blue-500 text-white p-3 font-semibold rounded-md   hover:bg-opacity-90">
         Submit
       </button>
     </form>

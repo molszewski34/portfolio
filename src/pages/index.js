@@ -12,7 +12,6 @@ const IndexPage = ({
   },
 }) => (
   <Layout>
-
     <section className="mb-3 mt-10 flex flex-col justify-center items-center gap-10 px-10  sm:flex-row">
       <div className="bg-violet-900 w-52 h-52 rounded-full flex justify-center items-center">
         <FontAwesomeIcon className="text-white text-9xl" icon={faCode} />
@@ -22,19 +21,20 @@ const IndexPage = ({
           Hi, I'm Mariusz and this is my Portfolio site made with GatsbyJS and
           GraphCMs
         </h1>
-        <p className="text-base text-gray-500">
-          I am a Frontend developer with knowledge of <b>Javascript</b>,{" "}
-          <b>React</b>, <b>GatsbyJS</b>, <b>Graphql</b> and{" "}
-          <b>headless CMS's</b>. I also use CSS frameworks such as{" "}
-          <b>Tailwind</b> and <b>Bulma.</b>
+        <p className="text-base text-gray-800">
+          I am a Frontend developer with knowledge of Javascript, React,
+          GatsbyJS, Graphql and headless CMS's. I also use CSS frameworks such
+          as Tailwind and Bulma.
         </p>
         <span className="text-gray-600 underline">
-          <a href="https://github.com/molszewski34/portfolio">
+          <a
+            href="https://github.com/molszewski34/portfolio"
+            aria-label="Link to my portfolio Github"
+          >
             If you are interested in how this page was made, you can check my
             repository<b className="text-blue-600"> here.</b>
           </a>
         </span>
-        <button></button>
       </div>
     </section>
 
@@ -54,11 +54,12 @@ const IndexPage = ({
                 href={context.thumbnailAsset.url}
                 target="_blank"
                 rel="noreferrer"
+                aria-label={`Link to ${page.node.context.data.title} image`}
               >
                 <div className="image">
                   <img
                     src={context.thumbnailAsset.url}
-                    alt=""
+                    alt={`Thumbnail of ${page.node.context.data.title} project`}
                     className="image__img"
                   />
 
@@ -80,35 +81,38 @@ const IndexPage = ({
 
                 <p className="text-white">{context.description}</p>
                 {/* <hr className="border-red-500" /> */}
-                <h3 className="mt-3 text-left font-bold text-red-500">Features:</h3>
-                <p className="text-gray-300">{context.features}</p>
+                <h3 className="mt-3 text-left font-bold text-red-500">
+                  Features:
+                </h3>
+                <p className="text-gray-200">{context.features}</p>
                 <h3 className="text-left font-bold text-red-500">Stack:</h3>
-                <p className="text-gray-300">{context.stack}</p>
+                <p className="text-gray-200">{context.stack}</p>
               </div>
-              <div className="flex flex-col w-full sm:flex-row sm:justify-between sm:px-6">
+              <div className="flex flex-col items-center w-full sm:flex-row sm:justify-between sm:px-6">
                 <Link
                   className="  mt-3"
                   to={page.node.path}
                   key={page.node.path}
                 >
-                  <button className="bg-red-500 text-white p-3 font-semibold rounded-md hover:bg-opacity-80 ">
+                  <span className="bg-red-500 text-white p-3 font-semibold rounded-md hover:bg-opacity-80 ">
                     Show Post
-                  </button>
+                  </span>
                 </Link>
 
-                <Link
+                <a
                   className=" mt-3  "
-                  to={page.node.context.data.githubLink}
+                  href={page.node.context.data.githubLink}
                   key={page.node.context.data.githubLink}
+                  aria-label={`Link to ${page.node.context.data.title} github`}
                 >
-                  <button className="bg-gray-500 text-white p-3 font-semibold flex items-center gap-1 rounded-md hover:bg-opacity-80">
+                  <span className="bg-gray-500 text-white p-3 font-semibold flex items-center gap-1 rounded-md hover:bg-opacity-80">
                     Code
                     <FontAwesomeIcon
                       className=" text-white text-2xl"
                       icon={faGithub}
                     />
-                  </button>
-                </Link>
+                  </span>
+                </a>
               </div>
             </li>
           )
@@ -119,17 +123,14 @@ const IndexPage = ({
 )
 
 export const Head = () => (
-
-    <>
-      <title>Portfolio</title>
-      <meta
-        name="description"
-        content="Hi, I'm Mariusz and this is my Portfolio site made with GatsbyJS and
+  <>
+    <title>Portfolio</title>
+    <meta
+      name="description"
+      content="Hi, I'm Mariusz and this is my Portfolio site made with GatsbyJS and
           GraphCMs"
-      />
-    </>
-
-
+    />
+  </>
 )
 export const projectPages = graphql`
   query {

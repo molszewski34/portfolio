@@ -23,7 +23,7 @@ const projectPost = ({ pageContext: { data } }) => (
           <img
             className="img__max-width mb-3"
             src={data.thumbnailAsset.url}
-            alt="Screenshot of project"
+            alt={`Thumbnail of ${data.title} project`}
           />
         </div>
 
@@ -32,14 +32,15 @@ const projectPost = ({ pageContext: { data } }) => (
           dangerouslySetInnerHTML={{ __html: data.text.html }}
         ></div>
         <div className="mt-5 pl-4 padding-left mb-4 button">
-          <Link
+          <a
             className="bg-gray-500 text-white p-3 font-semibold flex gap-1 rounded-md mb-4 hover:bg-opacity-80 "
-            to={data.githubLink}
+            href={data.githubLink}
             key={data.githubLink}
+            aria-label={`Link to ${data.title} github`}
           >
             Code
             <FontAwesomeIcon className="text-white text-2xl" icon={faGithub} />
-          </Link>
+          </a>
         </div>
       </section>
     </main>

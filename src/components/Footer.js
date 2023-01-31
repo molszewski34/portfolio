@@ -16,15 +16,15 @@ function Footer() {
     >
       <div className="sm:px-10">
         <div className="flex justify-center gap-3 mb-5">
-          <Link to="https://www.facebook.com/mariusz.olszewski.10297">
+          <a href="https://www.facebook.com/mariusz.olszewski.10297" aria-label="Link to facebook">
             <FontAwesomeIcon
               className=" text-blue-500 text-4xl"
               icon={faFacebook}
             />
-          </Link>
-          <Link to="https://github.com/molszewski34">
+          </a>
+          <a href="https://github.com/molszewski34" aria-label="Link to github">
             <FontAwesomeIcon className=" text-white text-4xl" icon={faGithub} />
-          </Link>
+          </a>
         </div>
         <h1 className="text-white font-bold text-xl sm:text-2xl ">
           Want to chat with me?
@@ -32,7 +32,7 @@ function Footer() {
         <p className="text-white text-sm">
           Message me with contact form or social media
         </p>
-        <p className="text-gray-300  text-base flex justify-center align-middle">
+        <p className="text-gray-200  text-base flex justify-center align-middle">
           <FontAwesomeIcon
             className=" text-white text-2xl w-4 mr-2"
             icon={faEnvelope}
