@@ -1,14 +1,15 @@
 # Portfolio
 
-This portfolio was made with use of Gatsbyjs and Headless Cms - Hygraph. Tailwind was used for practice reasons, although some custom css styles are also used. In gatsby-node.js file i used some custom schema injection for diffrent aproach to generating path to subsites made programaticaly. Today i would make it diffrent, but that was my way those days.
+This portfolio was made with use of Gatsby JS and Headless CMS - Hygraph. Tailwind was used for practice reasons, although some custom CSS styles are also used. In gatsby-node.js file, I used some custom schema injection for different approach to generating path to sub sites made programmatically. Today I would make it different, but that was my way those days.
 
 ## Features.
-Projects from repositories presented with programaticaly made pages.
+Projects from repositories presented with programmatically made pages.
 
 ## Stack
-React, Gatsbyjs, GraphCms, Tailwind, Headless Cms - Hygraph
+React, Gatsby Js, GraphCms, Tailwind, Headless CMS - Hygraph
 
 ## Dependencies:
+
   "@formspree/react": "^2.4.0", 
   "@fortawesome/fontawesome-svg-core": "^6.2.0",
   "@fortawesome/free-brands-svg-icons": "^6.2.0",
@@ -30,7 +31,7 @@ React, Gatsbyjs, GraphCms, Tailwind, Headless Cms - Hygraph
   "react-dom": "^18.1.0"
 
 
-### This build use gh-pages and data from hygraph. To run it you need to create hygraph account and configure api on their service with endpoints of same name as designed in project. You also need to change name in graphql references.
-gatsby-node.js use .env file to hide api config with enviroment name: GRAPHCMS_ENDPOINT. For development use .env.development. Production use .env.production 
-
+## Requirements
+This build uses gh-pages and data from Hygraph. To run it you need to create Hygraph account and configure API on their service with endpoints of same name as designed in project. You also need to change name in GraphQL references.
+Gatsby-node.js use .env file to hide API config with environment name: GRAPHCMS_ENDPOINT. For development use .env.development. Production use .env.production. More info about it on URL https://www.gatsbyjs.com/docs/how-to/local-development/environment-variables/
 
