@@ -18,16 +18,16 @@ const IndexPage = ({
         <FontAwesomeIcon className="text-white text-9xl" icon={faCode} />
       </div>
       <div className="text-center flex flex-col gap-3 bg-orange-200  p-3 rounded-md sm:w-6/12">
-        <h1 className="font-bold text-2xl  text-gray-700 sm:text-3xl sm:flex sm:flex-wrap ">
+        <h1 className="font-bold text-xl md:text-2xl  text-gray-700 sm:text-3xl sm:flex sm:flex-wrap ">
           Hi, I'm Mariusz and this is my Portfolio site made with GatsbyJS and
           GraphCMs
         </h1>
-        <p className="text-base text-gray-800">
+        <p className="text-sm md:text-base text-gray-800">
           I am a Frontend developer with knowledge of Javascript, React,
           GatsbyJS, Graphql and headless CMS's. I also use CSS frameworks such
           as Tailwind and Bulma.
         </p>
-        <span className="text-gray-600 underline">
+        <span className="text-gray-600 text-sm md:text-base underline">
           <a
             href="https://github.com/molszewski34/portfolio"
             aria-label="Link to my portfolio Github"
@@ -39,7 +39,7 @@ const IndexPage = ({
       </div>
     </section>
 
-    <section className="mb-3 mt-10 flex flex-col justify-center items-center px-10 w-full  ">
+    <article className="mb-3 mt-10 flex flex-col justify-center items-center px-10 w-full  ">
       <header className="mb-10 flex items-center justify-center">
         <h2 className="font-bold text-3xl sm:text-5xl">My Projects</h2>
       </header>
@@ -68,41 +68,42 @@ const IndexPage = ({
 
                   <div className="image__overlay">
                     <div className="image__title">
-                      <h4 className="image__text"> Click to Full view</h4>
+                      <h4 className="image__text text-center"> Click to Full view</h4>
                     </div>
                   </div>
                 </div>
               </a>
               <div className="mt-3 flex flex-col  my-3 sm:p-3">
                 <Link
-                  className="text-3xl font-bold text-center text-[#C94040] mb-3 hover:text-opacity-80"
+                  className="text-2xl md:text-3xl font-bold text-center text-[#C94040] mb-3 hover:text-opacity-80"
                   to={page.node.path}
                   key={page.node.path}
                 >
                   {page.node.context.data.title}
                 </Link>
 
-                <p className="text-white">{context.description}</p>
+                <p className="text-white text-sm md:text-base">{context.description}</p>
                 <h3 className="mt-3 text-left font-bold text-red-500">
                   Features:
                 </h3>
-                <p className="text-gray-200">{context.features}</p>
+                <p className="text-gray-200 text-sm md:text-base">{context.features}</p>
                 <h3 className="text-left font-bold text-red-500">Stack:</h3>
-                <p className="text-gray-200">{context.stack}</p>
+                <p className="text-gray-200 text-sm md:text-base">{context.stack}</p>
               </div>
               <div className="flex flex-col items-center w-full sm:flex-row sm:justify-between sm:px-6">
                 <Link
-                  className="  mt-3"
+                  className="mt-3"
                   to={page.node.path}
                   key={page.node.path}
                 >
-                  <span className="bg-red-500 text-white p-3 font-semibold rounded-md hover:bg-opacity-80 ">
-                    Show Post
+        
+                          <span className="bg-red-500 text-white p-3 font-semibold flex items-center gap-1 rounded-md hover:bg-opacity-80">
+                    Show post
                   </span>
                 </Link>
 
                 <a
-                  className=" mt-3  "
+                  className=" mt-3"
                   href={page.node.context.data.webpageLink}
                   key={page.node.context.data.webpageLink}
                   aria-label={`Link to ${page.node.context.data.title} web page`}
@@ -143,7 +144,7 @@ const IndexPage = ({
           )
         })}
       </ul>
-    </section>
+    </article>
   </Layout>
 )
 
