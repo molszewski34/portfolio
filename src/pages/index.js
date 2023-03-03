@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCode } from "@fortawesome/free-solid-svg-icons"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 
+
 const IndexPage = ({
   data: {
     allSitePage: { edges },
@@ -45,6 +46,8 @@ const IndexPage = ({
       <ul className="">
         {edges.map((page, index) => {
           const context = page.node.context.data
+          const typescript = page.node.context.data.typescript
+          console.log(typescript)
           return (
             <li
               key={index}
@@ -80,7 +83,6 @@ const IndexPage = ({
                 </Link>
 
                 <p className="text-white">{context.description}</p>
-                {/* <hr className="border-red-500" /> */}
                 <h3 className="mt-3 text-left font-bold text-red-500">
                   Features:
                 </h3>
@@ -101,6 +103,16 @@ const IndexPage = ({
 
                 <a
                   className=" mt-3  "
+                  href={page.node.context.data.webpageLink}
+                  key={page.node.context.data.webpageLink}
+                  aria-label={`Link to ${page.node.context.data.title} web page`}
+                >
+                  <span className="bg-[#22c55e] text-white p-3 font-semibold flex items-center gap-1 rounded-md hover:bg-opacity-80">
+                    Live Website
+                  </span>
+                </a>
+                <a
+                  className=" mt-3  "
                   href={page.node.context.data.githubLink}
                   key={page.node.context.data.githubLink}
                   aria-label={`Link to ${page.node.context.data.title} github`}
@@ -113,6 +125,19 @@ const IndexPage = ({
                     />
                   </span>
                 </a>
+
+                {typescript !== null && (
+                  <a
+                    className=" mt-3  "
+                    href={typescript}
+                    key={typescript}
+                    aria-label={`Link to ${typescript} github`}
+                  >
+                    <span className="bg-[#3178C6] text-white p-3 font-semibold flex items-center gap-1 rounded-md hover:bg-opacity-80">
+                      Typescript
+                    </span>
+                  </a>
+                )}
               </div>
             </li>
           )
@@ -163,6 +188,8 @@ export const projectPages = graphql`
               }
               title
               date
+              webpageLink
+              typescript
             }
           }
         }

@@ -42,6 +42,7 @@ const projectPost = ({ pageContext: { data } }) => (
             <FontAwesomeIcon className="text-white text-2xl" icon={faGithub} />
           </a>
         </div>
+
       </section>
     </main>
   </Layout>

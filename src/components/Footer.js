@@ -6,8 +6,6 @@ import { faFacebook } from "@fortawesome/free-brands-svg-icons"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
 
-import { Link } from "gatsby"
-
 function Footer() {
   return (
     <footer
@@ -16,7 +14,10 @@ function Footer() {
     >
       <div className="sm:px-10">
         <div className="flex justify-center gap-3 mb-5">
-          <a href="https://www.facebook.com/mariusz.olszewski.10297" aria-label="Link to facebook">
+          <a
+            href="https://www.facebook.com/mariusz.olszewski.10297"
+            aria-label="Link to facebook"
+          >
             <FontAwesomeIcon
               className=" text-blue-500 text-4xl"
               icon={faFacebook}

@@ -1,5 +1,4 @@
 import React from "react"
-import logo from "../images/gatsby-icon.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCode } from "@fortawesome/free-solid-svg-icons"
 import { Link } from "gatsby"
@@ -15,10 +14,12 @@ function Navbar() {
         </div>
       </Link>
 
-
-   
-        <a className="bg-black text-white px-3 font-semibold rounded-md flex items-center hover:bg-opacity-80" href="#footer">Contact Me</a>
-
+      <a
+        className="bg-black text-white px-3 font-semibold rounded-md flex items-center hover:bg-opacity-80"
+        href="#footer"
+      >
+        Contact Me
+      </a>
     </nav>
   )
 }

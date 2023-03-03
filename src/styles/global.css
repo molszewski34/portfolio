@@ -163,6 +163,9 @@ border-radius: 3px;
 .markdown p{
     margin: .3em 0;
 }
+.markdown a{
+ color:   #54c6f9
+}
 
 .markdown strong{
     font-weight: bold;

@@ -21,6 +21,8 @@ exports.createSchemaCustomization = ({ actions }) => {
       text: textContext,    
       thumbnailAsset:  thumbnailAssetContext,
       githubLink: String,
+      webpageLink: String,
+      typescript: String,
       
     }
     type imageContext {
@@ -36,6 +38,8 @@ exports.createSchemaCustomization = ({ actions }) => {
     }
 
 
+
+
   `)
 }
 
@@ -44,31 +48,32 @@ exports.createPages = async ({ graphql, actions }) => {
   const projectTemplate = path.resolve(`src/templates/projectPost.js`)
 
   const projectsQuery = await graphql(`
-  {
-    portfolio {
-      projectsConnection {
-        edges {
-          node {
-            features
-            date
-            description
-
-            link
-            slug
-            stack
-            title
-            githubLink
-            text {
-              html
-            }
-            thumbnailAsset {
-              url
+    {
+      portfolio {
+        projectsConnection {
+          edges {
+            node {
+              features
+              date
+              description
+              webpageLink
+              link
+              slug
+              stack
+              title
+              githubLink
+              typescript
+              text {
+                html
+              }
+              thumbnailAsset {
+                url
+              }
             }
           }
         }
       }
     }
-  }
   `)
   projectsQuery.data.portfolio.projectsConnection.edges.forEach(project => {
     createPage({
@@ -76,7 +81,6 @@ exports.createPages = async ({ graphql, actions }) => {
       component: projectTemplate,
       context: {
         data: project.node,
-   
       },
     })
   })

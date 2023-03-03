@@ -41,7 +41,7 @@ function ContactForm() {
         field="message"
         errors={state.errors}
       />
-      <button role="button" type="submit" disabled={state.submitting} className="bg-blue-500 text-white p-3 font-semibold rounded-md   hover:bg-opacity-90">
+      <button type="submit" disabled={state.submitting} className="bg-blue-500 text-white p-3 font-semibold rounded-md   hover:bg-opacity-90">
         Submit
       </button>
     </form>
